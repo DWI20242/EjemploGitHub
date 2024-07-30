@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Definición de metadatos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título de la página -->
+    <title>Saludo Personalizado</title>
+    <!-- Estilos CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Título principal -->
+    <h1>Saludo Personalizado</h1>
+    <!-- Campo de entrada de texto para el nombre -->
+    <p>Por favor, introduce tu nombre:</p>
+    <input type="text" id="nombreInput">
+    <!-- Botón para saludar -->
+    <button onclick="mostrarSaludo()">Saludar</button>
+    
+    <!-- Contenedor para mostrar el saludo -->
+    <div id="saludo" style="display: none;"></div>
+
+    <!-- Script JavaScript -->
+    <script>
+        // Función para mostrar el saludo
+        function mostrarSaludo() {
+            // Obtener el valor del campo de texto
+            var nombre = document.getElementById("nombreInput").value;
+            // Crear el saludo personalizado
+            var saludo = "¡Hola, " + nombre + "! ¿Cómo estás?";
+            // Mostrar el saludo en el elemento con el id "saludo"
+            document.getElementById("saludo").textContent = saludo;
+            // Mostrar el contenedor del saludo
+            document.getElementById("saludo").style.display = "block";
+        }
+    </script>
+</body>
+

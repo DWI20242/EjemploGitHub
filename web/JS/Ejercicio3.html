@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador del 1 al 10</title>
+</head>
+<body>
+    <h1>Contador del 1 al 10</h1>
+    <!-- Aquí mostraremos los números -->
+    <div id="contador"></div>
+
+    <script>
+        // Obtener el elemento donde se mostrarán los números
+        var contadorDiv = document.getElementById("contador");
+
+        // Usar un bucle for para escribir los números del 1 al 10
+        for (var i = 1; i <= 10; i++) {
+            // Crear un elemento de párrafo para cada número
+            var parrafo = document.createElement("p");
+            // Establecer el texto del párrafo como el número actual
+            parrafo.textContent = i;
+            // Agregar el párrafo al elemento contadorDiv
+            contadorDiv.appendChild(parrafo);
+        }
+    </script>
+</body>
+</html>
+

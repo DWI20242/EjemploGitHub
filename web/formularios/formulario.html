@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autenticación y Menú</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+   /* Estilo para el formulario */
+        form {
+          max-width: 300px; /* Ancho máximo del formulario */
+          margin: 0 auto; /* Centrar el formulario horizontalmente */
+        }
+    /* Estilo para los campos de texto y contraseña, y selecciones */
+        input[type="text"],
+        input[type="password"],
+        select {
+          width: 100%; /* Anchura completa del campo */
+          padding: 10px; /* Relleno interno */
+          margin: 5px 0; /* Margen superior e inferior */
+          display: inline-block; /* Mostrar en línea */
+          border: 1px solid #ccc; /* Borde con color */
+          border-radius: 4px; /* Bordes redondeados */
+          box-sizing: border-box; /* Incluir el borde y el relleno en el ancho y alto */
+        }
+     /* Estilo para el botón de enviar */
+        input[type="submit"] {
+          width: 100%; /* Anchura completa del botón */
+          background-color: #4CAF50; /* Color de fondo */
+          color: white; /* Color del texto */
+          padding: 14px 20px; /* Relleno interno */
+          margin: 8px 0; /* Margen */
+          border: none; /* Sin borde */
+          border-radius: 4px; /* Bordes redondeados */
+          cursor: pointer; /* Cursor al pasar por encima */
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Formulario de Autenticación -->
+<form id="loginForm" action="#" method="post">
+  <h2>Inicio de sesión</h2>
+  <label for="username">Usuario:</label>
+  <input type="text" id="username" name="username" required>
+  <label for="password">Contraseña:</label>
+  <input type="password" id="password" name="password" required>
+  <input type="submit" value="Iniciar Sesión">
+</form>
+
+<!-- Formulario de Menú -->
+<form id="menuForm" action="#" method="post" style="display: none;">
+  <h2>Bienvenido al Menú</h2>
+  <label for="opcion">Seleccione una opción:</label>
+  <select id="opcion" name="opcion">
+    <option value="opcion1">Africa</option>
+    <option value="opcion2">América</option>
+    <option value="opcion3">Asia</option>
+    <option value="opcion4">Europa</option>
+    <option value="opcion5">Oceanía</option>
+  </select>
+  
+Elija su pasatiempo favorito:
+<select name="pasa" enabled>
+    <option value="tv">TV</option>
+    <option value="libros">Libros</option>
+    <option value="musica">Música</option>
+    <option value="cine">Cine</option>
+    <option value="teatro">Teatro</option>
+    <option value="caminar">Caminar</option>
+    <option value="otros">Otros</option>
+</select>
+<input type="submit" value="Seleccionar">
+
+<br>
+<input type="radio" name="Edad" value="menor">menor de 17
+<br>
+<input type="radio" name="Adulto" value="adulto">Entre 18 a 60
+<br>
+<input type="radio" name="Mayor" value="mayor">Mayor de 60
+<br>
+
+
+<p>Nombre: <input type="text" name="nombre" size="40"></p>
+<p>Año de nacimiento: <input type="number" name="nacido" min="1900"></p>
+<p> Sexo
+<input type="radio" name="hm" value="h"> Hombre
+<input type="radio" name="hm" value="m"> Mujer
+</p>
+<p>
+    <input type="submit" value ="Enviar">
+    <input type="reset"  value ="Borrar">
+</p>
+
+</form>
+
+
+
+<script>
+  // Función para validar el inicio de sesión
+  function validarLogin() {
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    // Aquí puedes realizar la validación del usuario y contraseña
+    // Por ejemplo, comparando con valores predefinidos o consultando una base de datos
+    // Si las credenciales son válidas, mostrar el formulario de menú
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('menuForm').style.display = 'block';
+
+    return false; // para evitar enviar el formulario
+  }
+
+  // Agregar evento de envío para el formulario de inicio de sesión
+  document.getElementById('loginForm').onsubmit = validarLogin;
+</script>
+
+</body>
+</html>
+

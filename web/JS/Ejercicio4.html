@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pirámide del 1 al 50</title>
+</head>
+<body>
+    <h1>Pirámide del 1 al 50</h1>
+
+    <div id="piramide"></div>
+
+    <script>
+        // Obtener el elemento donde se mostrará la pirámide
+        var piramideDiv = document.getElementById("piramide");
+
+        // Inicializar la variable para almacenar la pirámide
+        var piramideTexto = "";
+
+        // Usar un bucle for para generar la pirámide
+        for (var i = 1; i <= 50; i++) {
+            // Generar los números repetidos para esta fila
+            var numerosFila = Array(i).fill(i).join(" ");
+            // Agregar los números de esta fila a la pirámide
+            piramideTexto += numerosFila + "<br>";
+        }
+
+        // Mostrar la pirámide en el elemento piramideDiv
+        piramideDiv.innerHTML = piramideTexto;
+    </script>
+</body>
+</html>
+
+
